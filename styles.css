@@ -1,0 +1,102 @@
+body {
+    background: url('h1.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh; /* Make sure the body covers full screen */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Full-screen dark overlay */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay to cover everything */
+    z-index: -1; /* Make sure the overlay stays behind the content */
+}
+
+/* Profile and Info Card Styles */
+.profile-card, .info-card {
+    background: rgba(51, 51, 51, 0.9);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Darker shadow for more emphasis */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Profile Image Hover Effect */
+.profile-card img {
+    width: 150px; /* Increased size */
+    height: 150px; /* Increased size */
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 5px solid white;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.profile-card img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.2); /* Brightness/Contrast effect */
+}
+
+/* Hover Effect for Cards */
+.profile-card:hover, .info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* More shadow */
+}
+
+/* Progress Bar Styles with Glow Effect */
+.progress {
+    background: #333;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #f1ad55, #ff7e00);
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;
+    box-shadow: 0 0 8px rgba(255, 126, 0, 0.7); /* Glow effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card, .info-card {
+        padding: 20px;
+        max-width: 90%;
+        margin: 10px auto;
+    }
+
+    .profile-card img {
+        width: 120px; /* Adjusted for smaller screens */
+        height: 120px; /* Adjusted for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card, .info-card {
+        padding: 15px;
+        max-width: 95%;
+        margin: 10px auto;
+    }
+
+    .profile-card img {
+        width: 100px; /* Adjusted for small screens */
+        height: 100px; /* Adjusted for small screens */
+    }
+
+    .progress {
+        height: 8px;
+    }
+}
